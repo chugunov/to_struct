@@ -41,6 +41,18 @@ def to_struct() do
 end
 ```
 
+Result: 
+
+```elixir
+ %Cart{
+  id: 1,
+  products: [
+    %Product{name: "milk"},
+    %Product{name: "potato"}
+  ]
+ }
+```
+
 ## Installation
 
 ```elixir
