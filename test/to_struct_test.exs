@@ -1,14 +1,14 @@
 defmodule Product do
   defstruct id: nil,
-    quantity: nil,
-    name: nil
+            quantity: nil,
+            name: nil
 end
 
 defmodule Cart do
   defstruct id: nil,
-    user_id: nil,
-    products: nil,
-    info: nil
+            user_id: nil,
+            products: nil,
+            info: nil
 end
 
 defmodule ToStructTest do
@@ -34,12 +34,12 @@ defmodule ToStructTest do
       ],
       "one_more_extra_field" => "foo_bar",
       "info" => %{
-        "date" => "2018-03-05 07:30:55" 
+        "date" => "2018-03-05 07:30:55"
       }
     }
 
     schema = %Cart{
-      products: [%Product{}],
+      products: [%Product{}]
     }
 
     expected = %Cart{
@@ -54,11 +54,11 @@ defmodule ToStructTest do
         %Product{
           id: 34,
           quantity: 5,
-          name: "potato",
+          name: "potato"
         }
       ],
       info: %{
-        "date" => "2018-03-05 07:30:55" 
+        "date" => "2018-03-05 07:30:55"
       }
     }
 
