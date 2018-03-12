@@ -1,14 +1,40 @@
 defmodule Product do
   defstruct id: nil,
-    quantity: nil,
-    name: nil
+            quantity: nil,
+            name: nil
 end
 
 defmodule Cart do
   defstruct id: nil,
-    user_id: nil,
-    products: nil,
-    info: nil
+            user_id: nil,
+            products: nil,
+            other_info: [],
+            info: nil
+end
+
+defmodule Keys.Mongo.Relation do
+  defmodule Id do
+    defstruct ti: nil,
+              fi: nil
+  end
+
+  defstruct _id: nil,
+            maxPrice: nil,
+            submissionCloseDate: nil,
+            submissionCloseDateTime: nil,
+            isChanged: false,
+            isDeleted: false,
+            isRead: false,
+            kind: nil,
+            placingWay: nil,
+            publicationDate: nil,
+            publicationDateTime: nil,
+            receiveDate: nil,
+            receiveDateTime: nil,
+            smp: nil,
+            marks: [],
+            keys: [],
+            users: []
 end
 
 defmodule ToStructTest do
@@ -34,12 +60,13 @@ defmodule ToStructTest do
       ],
       "one_more_extra_field" => "foo_bar",
       "info" => %{
-        "date" => "2018-03-05 07:30:55" 
-      }
+        "date" => "2018-03-05 07:30:55"
+      },
+      "other_info" => []
     }
 
     schema = %Cart{
-      products: [%Product{}],
+      products: [%Product{}]
     }
 
     expected = %Cart{
@@ -54,11 +81,11 @@ defmodule ToStructTest do
         %Product{
           id: 34,
           quantity: 5,
-          name: "potato",
+          name: "potato"
         }
       ],
       info: %{
-        "date" => "2018-03-05 07:30:55" 
+        "date" => "2018-03-05 07:30:55"
       }
     }
 
