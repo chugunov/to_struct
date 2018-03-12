@@ -30,7 +30,7 @@ defmodule ToStruct.MixProject do
   defp package do
     [
       name: :to_struct,
-      files: ["lib",  "mix.exs", "README*", "LICENSE*", "VERSION"],
+      files: ["lib", "mix.exs", "README*", "LICENSE*", "VERSION"],
       maintainers: ["Andrey Chugunov"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/chugunov/to_struct"}

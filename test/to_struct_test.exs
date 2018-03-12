@@ -61,8 +61,12 @@ defmodule ToStructTest do
       "one_more_extra_field" => "foo_bar",
       "info" => %{
         "date" => "2018-03-05 07:30:55"
+<<<<<<< HEAD
       },
       "other_info" => []
+=======
+      }
+>>>>>>> 39f864589c51de29b15612f76ced7a18e6d1ae56
     }
 
     schema = %Cart{
