@@ -22,3 +22,5 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 to_struct-*.tar
 
+.elixir_ls
+
