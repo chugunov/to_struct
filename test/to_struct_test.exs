@@ -12,31 +12,6 @@ defmodule Cart do
             info: nil
 end
 
-defmodule Keys.Mongo.Relation do
-  defmodule Id do
-    defstruct ti: nil,
-              fi: nil
-  end
-
-  defstruct _id: nil,
-            maxPrice: nil,
-            submissionCloseDate: nil,
-            submissionCloseDateTime: nil,
-            isChanged: false,
-            isDeleted: false,
-            isRead: false,
-            kind: nil,
-            placingWay: nil,
-            publicationDate: nil,
-            publicationDateTime: nil,
-            receiveDate: nil,
-            receiveDateTime: nil,
-            smp: nil,
-            marks: [],
-            keys: [],
-            users: []
-end
-
 defmodule ToStructTest do
   use ExUnit.Case
   doctest ToStruct
@@ -89,6 +64,17 @@ defmodule ToStructTest do
       }
     }
 
+    assert ToStruct.transform(schema, map) == expected
+  end
+
+  test "transform should convert empty map to struct" do
+    map = %{}
+
+    schema = %Cart{
+      products: [%Product{}]
+    }
+
+    expected = %Cart{}
     assert ToStruct.transform(schema, map) == expected
   end
 end

@@ -15,7 +15,7 @@ defmodule ToStruct do
   end
 
   def transform(schema, attrs) do
-    struct = struct(schema)
+    struct = struct(schema.__struct__)
 
     Enum.reduce(Map.to_list(struct), struct, fn {k, _}, acc ->
       case Map.fetch(attrs, Atom.to_string(k)) do
